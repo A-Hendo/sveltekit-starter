@@ -2,3 +2,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* For overwriting theme properties set data-theme to the theme name (eg: skeleton, wintry, modern, etc) */
+
+/* :root [data-theme='wintry'] {
+    --theme-rounded-base: 20px;
+    --theme-rounded-container: 4px;
+} */
+
+
+
+a:not(.btn):hover{
+    color: rgba(var(--color-primary-500))
+}
+
+body {
+    @apply bg-white;
+}
