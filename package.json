@@ -39,6 +39,7 @@
     "eslint-plugin-svelte": "^2.39.0",
     "lucide-svelte": "^0.378.0",
     "postgres": "^3.4.4",
+    "resend": "^3.2.0",
     "stripe": "^15.6.0",
     "svelte-stripe": "^1.2.0"
   }

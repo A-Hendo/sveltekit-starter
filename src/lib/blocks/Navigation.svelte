@@ -46,17 +46,12 @@
         </div>
     {:else}
         <div class="self-center font-bold">
-            <a href="/pricing" class="btn">Pricing</a>
-            <a href="/about" class="btn">About</a>
-            <a href="/contact" class="btn">Contact</a>
+            <a href="/#pricing" class="btn">Pricing</a>
+            <a href="/#faq" class="btn">FAQ</a>
+            <a href="/#about" class="btn">About</a>
+            <a href="/#contact" class="btn">Contact</a>
         </div>
         <div class="float-right content-center">
-            <!-- <button
-                type="button"
-                class="btn variant-ghost-primary"
-                on:click={() => modalStore.trigger(registerModal)}
-                >Sign Up</button
-            > -->
             <button
                 type="button"
                 class="btn variant-filled-primary"

@@ -2,7 +2,7 @@
     import { Accordion, AccordionItem } from "@skeletonlabs/skeleton";
 </script>
 
-<div class="py-16">
+<div id="faq" class="py-16">
     <h2 class="text-3xl font-bold text-center my-10">
         Frequently Asked Questions
     </h2>

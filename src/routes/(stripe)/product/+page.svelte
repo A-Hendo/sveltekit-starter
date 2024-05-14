@@ -13,6 +13,6 @@
     });
 </script>
 
-<div class="my-10 h-100">
+<div class="my-10 max-h-screen">
     <EmbeddedCheckout {stripe} clientSecret={data.clientSecret} />
 </div>
