@@ -1,16 +1,12 @@
 import { db } from "$lib/server/db";
+import { PaymentExist } from "$lib/server/queries";
 import { accounts, sessions, users, verificationTokens } from "$lib/server/schema";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { SvelteKitAuth } from "@auth/sveltekit";
-import type { Provider } from "@auth/sveltekit/providers";
-import Google from "@auth/sveltekit/providers/google";
+import { authenticationProviders } from "./custom.config";
 
 
-const providers: Provider[] = [
-    Google
-]
-
-export const providerMap = providers.map((provider) => {
+export const providerMap = authenticationProviders.map((provider) => {
     if (typeof provider === "function") {
         const providerData = provider()
         return { id: providerData.id, name: providerData.name }
@@ -26,9 +22,15 @@ export const { handle, signIn, signOut } = SvelteKitAuth({
         sessionsTable: sessions,
         verificationTokensTable: verificationTokens,
     }),
-    providers,
+    providers: authenticationProviders,
     pages: {
         signIn: "/signin",
         signOut: "/signout"
     },
+    callbacks: {
+        // Checks user has made a payment before they can sign in
+        async signIn({ profile }) {
+            return await PaymentExist(profile.email);
+        },
+    }
 });

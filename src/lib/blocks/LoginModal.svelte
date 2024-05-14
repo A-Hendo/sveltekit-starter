@@ -1,23 +1,20 @@
 <script lang="ts">
     import LoadingButton from "$lib/components/LoadingButton.svelte";
-
+    import { signIn } from "@auth/sveltekit/client";
     import { SignIn } from "@auth/sveltekit/components";
     import { type ModalSettings } from "@skeletonlabs/skeleton";
     import { SendHorizontal } from "lucide-svelte";
     import type { SvelteComponent } from "svelte";
+    import { serverAuthentication } from "../../custom.config";
 
     export let parent: SvelteComponent;
 
     let isLoading = false;
-    let email = "";
 
     export const registerModal: ModalSettings = {
         type: "component",
         component: "registerModal",
     };
-    function signIn() {
-        // Magic link
-    }
 </script>
 
 <div class="relative card p-4 w-modal-slim shadow-xl space-y-4">
@@ -28,32 +25,31 @@
     <header class="text-2xl font-bold text-center align-center justify-center">
         Log in to NAME
     </header>
-    <!-- make submit not signIn as this uses oauth and not magic links -->
-    <form on:submit={signIn} class="p-4 space-y-4 rounded-container-token">
-        <div class="py-2" />
-        <label class="label">
-            <span class="font-bold">Email</span>
-            <input class="input p-1" type="email" bind:value={email} required />
-        </label>
-        <footer class="pt-5 modal-footer {parent.regionFooter} flex flex-col">
-            <div class="flex flex-col w-full my-1">
-                <LoadingButton
-                    text="Log in"
-                    icon={SendHorizontal}
-                    {isLoading}
-                    class="btn variant-filled-primary order-last m-1 w-full"
-                />
-            </div>
-        </footer>
-    </form>
+    <SignIn class="resend-signin" provider="resend" signInPage="signin">
+        <LoadingButton
+            text="Log in"
+            slot="submitButton"
+            icon={SendHorizontal}
+            {isLoading}
+            class="btn variant-filled-primary order-last m-1"
+        />
+    </SignIn>
     <hr class="opacity-50" />
-    <SignIn
-        class="w-100 flex flex-col justify-center items-center"
-        provider="google"
-        signInPage="signin"
-    >
-        <button slot="submitButton" class="btn variant-filled-primary w-full"
+    {#if serverAuthentication}
+        <SignIn
+            class="w-100 flex flex-col justify-center items-center google-signin"
+            provider="google"
+            signInPage="signin"
+        >
+            <button
+                slot="submitButton"
+                class="btn variant-filled-primary w-full"
+                >Login with Google</button
+            >
+        </SignIn>
+    {:else}
+        <button on:click={signIn} class="btn variant-filled-primary w-full"
             >Login with Google</button
         >
-    </SignIn>
+    {/if}
 </div>

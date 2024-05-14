@@ -18,3 +18,9 @@ export async function GetPaymentByEmail(email: paymentsSelect['email']): Promise
 > {
     return db.select().from(payments).where(eq(payments.email, email));
 }
+
+export async function PaymentExist(email: paymentsSelect['email']): Promise<boolean> {
+    const payment = await db.select().from(payments).where(eq(payments.email, email));
+
+    return payment.length === 0 ? false : true;
+}
