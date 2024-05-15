@@ -36,6 +36,7 @@
         href={`https://www.example.com/${$page.data.seo.canonicalPage}`}
     />
     <meta name="robots" content="index, follow" />
+    <meta name="keywords" content={$page.data.seo.keywords} />
 </svelte:head>
 
 <Modal components={modalRegistry} />

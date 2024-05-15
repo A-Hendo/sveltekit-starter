@@ -8,6 +8,7 @@ export const load: PageLoad = async ({ data }) => {
             title: "",
             description: "",
             canonicalPage: "",
+            keywords: "",
         }
     };
 };
