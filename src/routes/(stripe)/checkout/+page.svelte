@@ -3,7 +3,7 @@
     import { loadStripe } from "@stripe/stripe-js";
     import { onMount } from "svelte";
     import { EmbeddedCheckout } from "svelte-stripe";
-    import type { PageData } from "../../(stripe)/product/$types";
+    import type { PageData } from "./$types";
 
     export let data: PageData;
     let stripe: any = null;
