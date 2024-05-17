@@ -13,12 +13,15 @@
     } from "@floating-ui/dom";
     import {
         Modal,
+        autoModeWatcher,
         initializeStores,
         storePopup,
         type ModalComponent,
     } from "@skeletonlabs/skeleton";
+    import { onMount } from 'svelte';
 
     import "../app.pcss";
+    import { serverSideRendering } from "../custom.config";
 
     initializeStores();
     storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
@@ -26,17 +29,31 @@
     const modalRegistry: Record<string, ModalComponent> = {
         loginModal: { ref: LoginModal },
     };
+
+    if (!serverSideRendering){
+        onMount(() => {
+            autoModeWatcher();
+        })
+    }
 </script>
 
 <svelte:head>
     <title>{$page.data.seo.title}</title>
     <meta name="description" content={$page.data.seo.description} />
-    <link
-        rel="canonical"
-        href={`https://www.example.com/${$page.data.seo.canonicalPage}`}
-    />
+    <link rel="canonical" href={`www.example.com/${$page.data.seo.canonicalPage}`} />
     <meta name="robots" content="index, follow" />
     <meta name="keywords" content={$page.data.seo.keywords} />
+    <meta
+        property="og:image"
+        content={$page.data.seo.image ? $page.data.seo.image : ""}
+    />
+    <meta
+        property="og:url"
+        content={`www.example.com/${$page.data.seo.canonicalPage}`}
+    />
+    <meta property="og:title" content={$page.data.seo.title} />
+
+    {@html "<script>(" + autoModeWatcher.toString() + ")();</script>"}
 </svelte:head>
 
 <Modal components={modalRegistry} />
