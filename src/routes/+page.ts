@@ -9,6 +9,7 @@ export const load: PageLoad = async ({ data }) => {
             description: "",
             canonicalPage: "",
             keywords: "",
-        }
+        },
+        session: data?.session,
     };
 };
