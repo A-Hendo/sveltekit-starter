@@ -21,7 +21,7 @@
     import { onMount } from 'svelte';
 
     import "../app.pcss";
-    import { serverSideRendering } from "../custom.config";
+    import { serverSideRendering } from "../supakit.config";
 
     initializeStores();
     storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });

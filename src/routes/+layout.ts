@@ -1,3 +1,3 @@
-import { serverSideRendering } from "../custom.config";
+import { serverSideRendering } from "../supakit.config";
 
 export const ssr = serverSideRendering;

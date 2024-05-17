@@ -3,7 +3,7 @@ import { PaymentExist } from "$lib/server/queries";
 import { accounts, sessions, users, verificationTokens } from "$lib/server/schema";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { SvelteKitAuth } from "@auth/sveltekit";
-import { authenticationProviders } from "./custom.config";
+import { authenticationProviders } from "./supakit.config";
 
 
 export const providerMap = authenticationProviders.map((provider) => {

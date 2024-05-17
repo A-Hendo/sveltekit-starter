@@ -5,7 +5,7 @@
     import { type ModalSettings } from "@skeletonlabs/skeleton";
     import { SendHorizontal } from "lucide-svelte";
     import type { SvelteComponent } from "svelte";
-    import { serverAuthentication } from "../../custom.config";
+    import { serverAuthentication } from "../../supakit.config";
 
     export let parent: SvelteComponent;
 

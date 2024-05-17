@@ -3,7 +3,7 @@ import { InsertPayment } from "$lib/server/queries";
 import { error, json } from '@sveltejs/kit';
 import { Resend } from "resend";
 import Stripe from 'stripe';
-import { emailMarketing } from '../../../custom.config';
+import { emailMarketing } from '../../../supakit.config';
 
 const stripe = new Stripe(SECRET_STRIPE_KEY)
 const resend = new Resend(AUTH_RESEND_KEY)
