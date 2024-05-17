@@ -2,7 +2,7 @@
     import { Facebook, Instagram, Linkedin, Twitter } from "lucide-svelte";
 </script>
 
-<footer class="bg-gray-100">
+<footer>
     <div class="mx-auto max-w-screen-xl px-3 sm:px-5 lg:px-6 py-10">
         <div
             class="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-5"

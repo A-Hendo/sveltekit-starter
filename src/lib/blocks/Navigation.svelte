@@ -25,7 +25,7 @@
     };
 </script>
 
-<nav class="bg-white p-2 border-b-1 flex justify-between content-center shadow">
+<nav class="p-2 border-b-1 flex justify-between content-center shadow">
     <div class="flex self-center">
         <!-- <img alt="logo" src="./favicon.png" class="w-5" /> -->
         <h1 class="font-bold">NAME</h1>
