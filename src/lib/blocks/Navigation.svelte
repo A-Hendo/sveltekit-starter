@@ -30,7 +30,7 @@
         <!-- <img alt="logo" src="./favicon.png" class="w-5" /> -->
         <h1 class="font-bold">NAME</h1>
     </div>
-    {#if $page.data.session}
+    {#if $page.data.session?.user}
         <div class="self-center font-bold">
             <a href="/" class="btn">Home</a>
             <a href="/dashboard" class="btn">Dashboard</a>

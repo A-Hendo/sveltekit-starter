@@ -2,7 +2,7 @@
 
 import type { PageLoad } from './$types';
 
-export const load: PageLoad = async ({ data }) => {
+export const load: PageLoad = async () => {
     return {
         seo: {
             title: "",
@@ -10,6 +10,5 @@ export const load: PageLoad = async ({ data }) => {
             canonicalPage: "",
             keywords: "",
         },
-        session: data?.session,
     };
 };
