@@ -71,10 +71,10 @@
         >
             <div class="flex-col py-4">
                 <div class="flex gap-5">
-                    <a href="/"><Linkedin /></a>
-                    <a href="/"><Facebook /></a>
-                    <a href="/"><Twitter /></a>
-                    <a href="/"><Instagram /></a>
+                    <a class="btn-link" href="/"><Linkedin /></a>
+                    <a class="btn-link" href="/"><Facebook /></a>
+                    <a class="btn-link" href="/"><Twitter /></a>
+                    <a class="btn-link" href="/"><Instagram /></a>
                 </div>
             </div>
             <div class="flex-col py-4">
