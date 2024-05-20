@@ -2,6 +2,7 @@
     import { page } from "$app/stores";
     import { SignOut } from "@auth/sveltekit/components";
     import {
+        AppBar,
         Avatar,
         LightSwitch,
         getModalStore,
@@ -25,41 +26,55 @@
     };
 </script>
 
-<nav class="p-2 border-b-1 flex justify-between content-center shadow">
-    <div class="flex self-center">
-        <!-- <img alt="logo" src="./favicon.png" class="w-5" /> -->
-        <h1 class="font-bold">NAME</h1>
-    </div>
-    {#if $page.data.session?.user}
-        <div class="self-center font-bold">
-            <a href="/" class="btn">Home</a>
-            <a href="/dashboard" class="btn">Dashboard</a>
+<AppBar
+    gridColumns="grid-cols-3"
+    slotDefault="place-self-center"
+    slotLead="place-content-start"
+    slotTrail="place-content-end"
+>
+    <svelte:fragment slot="lead">
+        <div class="flex self-center">
+            <!-- <img alt="logo" src="./favicon.png" class="w-5" /> -->
+            <h1 class="font-bold">NAME</h1>
         </div>
-        <div use:popup={accountPopup}>
-            <Avatar
-                border="hover:!ring-primary-500 hover:ring-2"
-                cursor="cursor-pointer"
-                src={$page.data.session?.user?.image}
-                width="w-10"
-                rounded="rounded-full"
-            />
-        </div>
-    {:else}
-        <div class="self-center font-bold">
-            <a href="/#pricing" class="btn">Pricing</a>
-            <a href="/#faq" class="btn">FAQ</a>
-            <a href="/#about" class="btn">About</a>
-            <a href="/#contact" class="btn">Contact</a>
-        </div>
-        <div class="float-right content-center">
-            <button
-                type="button"
-                class="btn variant-filled-primary"
-                on:click={() => modalStore.trigger(loginModal)}>Login</button
-            >
-        </div>
-    {/if}
-</nav>
+    </svelte:fragment>
+
+    <svelte:fragment slot="default">
+        <nav class="self-center font-bold">
+            <a href="/#pricing" class="btn btn-link">Pricing</a>
+            <a href="/#faq" class="btn btn-link">FAQ</a>
+            <a href="/#about" class="btn btn-link">About</a>
+            <a href="/#contact" class="btn btn-link">Contact</a>
+            {#if $page.data.session?.user}
+                <a href="/dashboard" class="btn">Dashboard</a>
+            {/if}
+        </nav>
+    </svelte:fragment>
+
+    <svelte:fragment slot="trail">
+        {#if $page.data.session?.user}
+            <div use:popup={accountPopup}>
+                <Avatar
+                    border="hover:!ring-primary-500 hover:ring-2"
+                    cursor="cursor-pointer"
+                    src={$page.data.session?.user?.image}
+                    width="w-10"
+                    rounded="rounded-full"
+                />
+            </div>
+        {:else}
+            <div class="self-center font-bold"></div>
+            <div class="float-right content-center">
+                <button
+                    type="button"
+                    class="btn variant-filled-primary"
+                    on:click={() => modalStore.trigger(loginModal)}
+                    >Login</button
+                >
+            </div>
+        {/if}
+    </svelte:fragment>
+</AppBar>
 
 <div class="card p-4 w-72 shadow-xl" data-popup="accountPopup">
     <div class="arrow bg-primary-500" />
