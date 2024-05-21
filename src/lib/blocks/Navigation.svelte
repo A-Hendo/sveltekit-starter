@@ -44,6 +44,7 @@
             <a href="/#pricing" class="btn btn-link">Pricing</a>
             <a href="/#faq" class="btn btn-link">FAQ</a>
             <a href="/#about" class="btn btn-link">About</a>
+            <a href="/blog" class="btn btn-link">Blog</a>
             <a href="/#contact" class="btn btn-link">Contact</a>
             {#if $page.data.session?.user}
                 <a href="/dashboard" class="btn">Dashboard</a>
