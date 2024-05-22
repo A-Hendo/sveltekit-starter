@@ -10,7 +10,7 @@
     };
 </script>
 
-<div class="bg-surface-800 min-h-dvh">
+<div class="bg-surface-100-800-token min-h-dvh">
     <div class="mx-auto max-w-[750px] px-3 sm:px-5 lg:px-6 py-8">
         <div class="pb-10">
             <a href="/blog" class="btn font-semibold btn-link">
@@ -39,11 +39,11 @@
                         )}
                     </div>
                 </div>
-                <h1 class="text-4xl font-bold my-4">
+                <h1 class="text-4xl font-bold mb-4 mt-12">
                     {data.blog.title}
                 </h1>
                 <div class="mb-10">{data.blog.description}</div>
-                <div class="my-4 article-content">
+                <div class="my-4 article-content leading-relaxed">
                     <svelte:component this={data.blog.content} />
                 </div>
             </article>

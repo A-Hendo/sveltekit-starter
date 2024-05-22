@@ -51,8 +51,13 @@ code {
     @apply select-all;
 }
 
+pre {
+    @apply whitespace-pre !important;
+    @apply overflow-x-auto;
+}
+
 .app-bar{
-    @apply bg-surface-900 !important;
+    @apply bg-surface-50-900-token !important;
 }
 
 
@@ -61,35 +66,41 @@ code {
     @apply bg-surface-500;
 }
 
-.article-content h1 {
+.article-content > h1 {
     @apply text-4xl;
     @apply font-semibold;
     @apply mt-12;
     @apply mb-4;
 }
 
-.article-content h2 {
+.article-content > h2 {
     @apply text-3xl;
     @apply font-semibold;
     @apply mt-12;
     @apply mb-4;
 }
 
-.article-content h3 {
+.article-content > h3 {
     @apply text-2xl;
     @apply font-semibold;
     @apply mt-12;
     @apply mb-4;
 }
 
-.article-content h4 {
+.article-content > h4 {
     @apply text-xl;
     @apply font-semibold;
     @apply mt-12;
     @apply mb-4;
 }
 
-.article-content h5, h6 {
+.article-content > h5 {
+    @apply text-lg;
+    @apply font-semibold;
+    @apply mt-12;
+    @apply mb-4;
+}
+.article-content > h6 {
     @apply text-lg;
     @apply font-semibold;
     @apply mt-12;
