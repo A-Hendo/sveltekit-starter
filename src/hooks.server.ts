@@ -23,7 +23,7 @@ const limiter = new RetryAfterRateLimiter({
 export const limiterHandle: Handle = async ({ event, resolve }) => {
     const status = await limiter.check(event);
     if (status.limited) {
-        let response = new Response(
+        const response = new Response(
             `You are being rate limited. Please try after ${status.retryAfter} seconds.`,
             {
                 status: 429,

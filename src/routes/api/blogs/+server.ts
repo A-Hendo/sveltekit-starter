@@ -2,7 +2,7 @@ import type { blogMetadata } from '$lib/types';
 import { json } from '@sveltejs/kit';
 
 
-export const GET = async ({ url }) => {
+export const GET = async () => {
     let blogs = []
 
     const paths = import.meta.glob('/src/routes/blog/*.md', { eager: true })

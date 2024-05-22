@@ -18,7 +18,7 @@
         storePopup,
         type ModalComponent,
     } from "@skeletonlabs/skeleton";
-    import { onMount } from 'svelte';
+    import { onMount } from "svelte";
 
     import "../app.pcss";
     import { serverSideRendering } from "../supakit.config";
@@ -30,17 +30,20 @@
         loginModal: { ref: LoginModal },
     };
 
-    if (!serverSideRendering){
+    if (!serverSideRendering) {
         onMount(() => {
             autoModeWatcher();
-        })
+        });
     }
 </script>
 
 <svelte:head>
     <title>{$page.data.seo.title}</title>
     <meta name="description" content={$page.data.seo.description} />
-    <link rel="canonical" href={`www.example.com/${$page.data.seo.canonicalPage}`} />
+    <link
+        rel="canonical"
+        href={`www.example.com${$page.data.seo.canonicalPage}`}
+    />
     <meta name="robots" content="index, follow" />
     <meta name="keywords" content={$page.data.seo.keywords} />
     <meta
@@ -49,11 +52,12 @@
     />
     <meta
         property="og:url"
-        content={`www.example.com/${$page.data.seo.canonicalPage}`}
+        content={`www.example.com${$page.data.seo.canonicalPage}`}
     />
     <meta property="og:title" content={$page.data.seo.title} />
+    <meta property="og:description" content={$page.data.seo.description} />
 
-    {@html "<script>(" + autoModeWatcher.toString() + ")();</script>"}
+    <!-- {@html "<script>(" + autoModeWatcher.toString() + ")();</script>"} -->
 </svelte:head>
 
 <Modal components={modalRegistry} />
