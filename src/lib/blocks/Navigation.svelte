@@ -27,8 +27,8 @@
 </script>
 
 <AppBar
-    gridColumns="grid-cols-3"
-    slotDefault="place-self-center"
+    gridColumns="grid-cols-5"
+    slotDefault="place-self-center col-span-3"
     slotLead="place-content-start"
     slotTrail="place-content-end"
 >
