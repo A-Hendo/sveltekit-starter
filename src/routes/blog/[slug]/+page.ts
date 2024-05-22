@@ -1,3 +1,4 @@
+import { redirect } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ data, params }) => {
@@ -7,6 +8,9 @@ export const load: PageLoad = async ({ data, params }) => {
 
     const response = await fetch("http://localhost:5173/api/blogs");
     const blogs = await response.json();
+
+    if (!publish)
+        redirect(307, "/blog")
 
     return {
         seo: {
