@@ -117,6 +117,16 @@ pre {
     @apply m-4;
 }
 
-.article-content a {
+.article-content > a {
     @apply underline;
+}
+
+
+nav > a {
+    @apply text-gray-500;
+    @apply cursor-pointer;
+}
+
+nav > a:hover {
+    color: rgba(var(--color-primary-500));
 }

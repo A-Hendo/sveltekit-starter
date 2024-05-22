@@ -9,57 +9,47 @@
         >
             <div class="text-center sm:text-left">
                 <span class="font-semibold">Press</span>
-                <nav>
-                    <ul class="text-gray-500">
-                        <li><a href="/">New link</a></li>
-                        <li><a href="/">New link</a></li>
-                        <li><a href="/">New link</a></li>
-                        <li><a href="/">New link</a></li>
-                    </ul>
+                <nav class="grid grid-flow-row">
+                    <a href="/">New link</a>
+                    <a href="/">New link</a>
+                    <a href="/">New link</a>
+                    <a href="/">New link</a>
                 </nav>
             </div>
             <div class="text-center sm:text-left">
                 <span class="font-semibold">Contact</span>
-                <nav>
-                    <ul class="text-gray-500">
-                        <li><a href="/">New link</a></li>
-                        <li><a href="/">New link</a></li>
-                        <li><a href="/">New link</a></li>
-                        <li><a href="/">New link</a></li>
-                    </ul>
+                <nav class="grid grid-flow-row">
+                    <a href="/">New link</a>
+                    <a href="/">New link</a>
+                    <a href="/">New link</a>
+                    <a href="/">New link</a>
                 </nav>
             </div>
             <div class="text-center sm:text-left">
                 <span class="font-semibold">Legal</span>
-                <nav>
-                    <ul class="text-gray-500">
-                        <li><a href="/">Terms of Service</a></li>
-                        <li><a href="/">Privacy Policy</a></li>
-                        <li><a href="/">New link</a></li>
-                        <li><a href="/">New link</a></li>
-                    </ul>
+                <nav class="grid grid-flow-row">
+                    <a href="/">Terms of Service</a>
+                    <a href="/">Privacy Policy</a>
+                    <a href="/">New link</a>
+                    <a href="/">New link</a>
                 </nav>
             </div>
             <div class="text-center sm:text-left">
                 <span class="font-semibold">Header</span>
-                <nav>
-                    <ul class="text-gray-500">
-                        <li><a href="/">New link</a></li>
-                        <li><a href="/">New link</a></li>
-                        <li><a href="/">New link</a></li>
-                        <li><a href="/">New link</a></li>
-                    </ul>
+                <nav class="grid grid-flow-row">
+                    <a href="/">New link</a>
+                    <a href="/">New link</a>
+                    <a href="/">New link</a>
+                    <a href="/">New link</a>
                 </nav>
             </div>
             <div class="text-center sm:text-left">
                 <span class="font-semibold">Header</span>
-                <nav>
-                    <ul class="text-gray-500">
-                        <li><a href="/">New link</a></li>
-                        <li><a href="/">New link</a></li>
-                        <li><a href="/">New link</a></li>
-                        <li><a href="/">New link</a></li>
-                    </ul>
+                <nav class="grid grid-flow-row">
+                    <a href="/">New link</a>
+                    <a href="/">New link</a>
+                    <a href="/">New link</a>
+                    <a href="/">New link</a>
                 </nav>
             </div>
         </div>
