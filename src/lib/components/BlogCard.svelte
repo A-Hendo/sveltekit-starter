@@ -30,7 +30,7 @@
     </div>
     <hr class="opacity-50" />
     <footer class="px-4 flex justify-start items-center">
-        <div class="flex-auto flex justify-between items-center">
+        <div class="flex-auto flex justify-between items-center my-4">
             <h6 class="h6" data-toc-ignore>{author}</h6>
             <h6 class="h6">
                 {new Date(date).toLocaleDateString(undefined, options)}
