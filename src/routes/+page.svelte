@@ -4,9 +4,11 @@
     import FeaturesImage from "$lib/blocks/FeaturesImage.svelte";
     import Hero from "$lib/blocks/Hero.svelte";
     import Pricing from "$lib/blocks/Pricing.svelte";
+    import SponsorScroller from "$lib/components/SponsorScroller.svelte";
 </script>
 
 <Hero />
+<SponsorScroller />
 <Features />
 <FeaturesImage />
 <Pricing />
