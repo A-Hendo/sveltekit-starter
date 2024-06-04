@@ -1,5 +1,6 @@
 <script lang="ts">
     import BlogCard from "$lib/components/BlogCard.svelte";
+    import FullBlogCard from "$lib/components/FullBlogCard.svelte";
 
     export let data;
 </script>
@@ -15,7 +16,19 @@
     </div>
     <div class="grid lg:grid-cols-2 mb-24 md:mb-32 gap-8">
         {#each data.blogs as blog}
-            <BlogCard
+        <BlogCard
+        title={blog.metadata.title}
+        description={blog.metadata.description}
+        image={blog.metadata.image}
+        date={blog.metadata.date}
+        author={blog.metadata.author}
+        slug={blog.slug}
+        />
+        {/each}
+    </div>
+    <div class="grid mb-24 md:mb-32 gap-8">
+        {#each data.blogs as blog}
+            <FullBlogCard
                 title={blog.metadata.title}
                 description={blog.metadata.description}
                 image={blog.metadata.image}
