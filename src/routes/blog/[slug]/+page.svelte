@@ -51,7 +51,7 @@
                 </article>
             </div>
             <div
-                class="block mt-6 max-md:pb-4 md:pl-12 max-md:border-b md:border-l md:order-last md:w-64 shrink-0"
+                class="block mt-2 max-md:pb-4 md:pl-12 max-md:border-b md:border-l md:order-last md:w-64 shrink-0"
             >
                 {#each data.blogs as blog}
                     <BlogAdCard
