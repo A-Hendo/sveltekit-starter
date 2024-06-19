@@ -14,11 +14,11 @@
 </script>
 
 <a
-    class="card bg-initial card-hover overflow-hidden rounded-lg"
-    href={`/blog/${slug}`}
+    class="card bg-white hover:variant-soft overflow-hidden rounded-lg"
+    href="{`/blog/${slug}`}"
 >
     <header class="flex justify-center">
-        <img src={image} alt={`${title} blog`} />
+        <img src="{image}" alt="{`${title} blog`}" />
     </header>
     <div class="p-4 space-y-4">
         <h3 class="h3" data-toc-ignore>{title}</h3>

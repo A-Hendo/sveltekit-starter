@@ -1,9 +1,13 @@
-# SupaSvelte
+<h1 align="center">
+    <img src="./static/favicon.png" width="25%" alt="supakit logo">
+    <br>
+    SupaSvelte
+</h1>
 
 SupaSvelte is a SvelteKit boilerplate, designed to help you supercharge your SaaS startup to ship in days, not weeks.
 
 ## Requirements
-    - [Yarn](https://yarnpkg.com/getting-started/install)
+    [Yarn](https://yarnpkg.com/getting-started/install)
 
 
 ## Developing

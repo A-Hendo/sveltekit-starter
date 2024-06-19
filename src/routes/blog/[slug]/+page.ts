@@ -7,7 +7,18 @@ export const load: PageLoad = async ({ data, params }) => {
     const content = post.default;
 
     const response = await fetch("http://localhost:5173/api/blogs");
-    const blogs = await response.json();
+    let blogs = await response.json();
+    const blogAds = [];
+
+    blogs = blogs.filter(blog => blog.metadata.slug !== params.slug);
+
+    const firstBlog = Math.floor(Math.random() * blogs.length);
+    blogAds.push(blogs[firstBlog]);
+    blogs.splice(blogs.indexOf(firstBlog), 1);
+
+    const secondBlog = Math.floor(Math.random() * blogs.length);
+    blogAds.push(blogs[secondBlog]);
+    blogs.splice(blogs.indexOf(secondBlog), 1);
 
     if (!publish)
         redirect(307, "/blog")
@@ -24,6 +35,6 @@ export const load: PageLoad = async ({ data, params }) => {
         blog: {
             content, title, author, date, description, image
         },
-        blogs,
+        blogs: blogAds,
     };
 };

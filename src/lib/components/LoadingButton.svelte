@@ -8,11 +8,11 @@
     export let isLoading = false;
 </script>
 
-<button disabled={isLoading} class={$$props.class} type="submit"
+<button disabled="{isLoading}" class="{$$props.class}" type="submit"
     >{text}
     {#if isLoading}
         <LoaderCircle size="16" class="ml-1 animate-spin" />
     {:else if icon}
-        <svelte:component this={icon} size="16" class="ml-1" />
+        <svelte:component this="{icon}" size="16" class="ml-1" />
     {/if}
 </button>
